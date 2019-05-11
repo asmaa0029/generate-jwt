@@ -12,7 +12,6 @@ class Database{
     // la connexion à la base de données
     public function getConnection(){
 
-
         $this->conn = null;
 
         try{

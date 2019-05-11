@@ -1,0 +1,20 @@
+{
+    "name": "asalhi/generate-jwt",
+    "description": "générer un jetn JWT.",
+    "type": "project",
+    "license": "MIT",
+    "authors":[
+      {
+        "name":"asalhi",
+        "email":"asalhi@inttic.dz"
+      }
+    ],
+    "autoload":{
+      "psr-4":{
+        "User\\":"src/val-jwt/"
+      }
+    } ,
+    "require": {
+      "php": ">=5.3.0"
+    }
+}

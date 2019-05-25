@@ -1,12 +1,8 @@
 <?php
 require './test_jwt.php';
-if (isset($_SESSION)){
 
   if(!empty($_POST)){
       $payload = $user->create_user($_POST);
-      list($key, $time)=generate_key($_SESSION['time'],$_SESSION['key']);
-
-       echo "second key : $key<br>";
          if(validate_jwt($jwt,$key)){
            $product = new User($db);
 
@@ -33,13 +29,7 @@ if (isset($_SESSION)){
          }
           else {
             die("an error has occurred");
-            session_unset();
-            session_destroy();
-
+            
           }
   }
-
-}
-
-
  ?>

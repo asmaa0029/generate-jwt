@@ -3,12 +3,15 @@
 	require 'jwt.php';
 	require 'keys.php';
 	
-	//$payload = array('user_role' => 'admin','username'=>'asma' );
+	
 	$key = generate_key();
    
-	$valid = time();
+	$valid = 3600;
+	$payload['name'] = 'asmaa...biasi';
 	$jwt = JWT($head=array("alg"=>"sha256","typ"=>"JWT"),$payload,$key, $valid);
 	echo $jwt;
+	$payload = validate_jwt($jwt,$key);
+	var_dump($payload);
 
 	
 	$userData = $conx->query("select name AS 'Nom', role AS 'Role', created AS 'Création' from users where name=".$_POST['user'])->fetch();

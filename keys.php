@@ -47,10 +47,10 @@ function generate_key(){
 
     }
     
-else{
-  $key=$key[2]['cle'];
-}
-      return $key;
+    else{
+      $key=$keys[2]["cle"];
+    }
+          return $key;
 
 }
 

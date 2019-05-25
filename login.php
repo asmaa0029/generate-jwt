@@ -7,7 +7,7 @@
 	$key = generate_key();
    
 	$valid = 3600;
-	$payload['name'] = 'asmaa...biasi';
+	$payload['name'] = 'asmaa...';
 	$jwt = JWT($head=array("alg"=>"sha256","typ"=>"JWT"),$payload,$key, $valid);
 	echo $jwt;
 	$payload = validate_jwt($jwt,$key);

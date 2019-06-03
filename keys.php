@@ -11,7 +11,7 @@ function generate_key(){
 
     $query = $conx->query("SELECT * FROM `cles` ORDER BY `cles`.`generation` ASC");
     $keys=$query->fetchAll(PDO::FETCH_ASSOC);
-    $key_time = strtotime($keys[0]["generation"]);
+    $key_time = strtotime(end($keys)["generation"]);
     $cle = $keys[0]["cle"];
 
     if(count($keys) < 3){ //!check if table is empty

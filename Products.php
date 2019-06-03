@@ -8,6 +8,14 @@ $jwt=$_GET['jwt'];
 $generate=generate_key();
 
 	$pay=validate_jwt($jwt, $generate);
+
+	/*$keys = [];
+	$req = $conx->query("select cle from cles order by generation limit 0,1");
+	while ($key = $req->fetch() ) {
+		$keys[] = $key;
+}
+
+	$pay=validate_jwt($jwt, $keys[0]['cle']); */
 // var_dump($pay);
 
 if(isset ($pay['Role'])){

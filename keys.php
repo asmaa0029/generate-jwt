@@ -14,8 +14,8 @@ function generate_key(){
     $key_time = strtotime(end($keys)["generation"]);
     $cle = $keys[0]["cle"];
 
-    if(count($keys) < 3){ //!check if table is empty
-          // ! insert into database                 
+    if(count($keys) < 3){ //!vérifier si la table est vide
+          // ! inseer dans la base de données                 
            try {
                     $stmt = $conx->prepare("INSERT INTO `cles` (`cle`) VALUES (:cle)");
                     if ($stmt->execute(array(":cle" => $key))) {
